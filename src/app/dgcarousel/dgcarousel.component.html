@@ -1,0 +1,41 @@
+<!--Carousel Wrapper-->
+<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel" style="padding-top:22px;padding-bottom: 22px">
+    <div class="row">
+        <div class="carousel-inner" role="listbox">
+            <!--Carousel Wrapper-->
+            <div class="row" style="width:57% !important;margin-left: auto;margin-right: auto;padding-top: 10px; padding-bottom: 10px">
+                <div *ngFor="let img of images; let i=index">
+                    <div class="avatar" style="cursor: pointer;padding-left:4px;padding-right:4px;">
+                        <img src={{img.image}} class="rounded-circle z-depth-1" height="80px" width="80px" alt="First sample avatar image" (click)="dotClicked(i)">
+                    </div>
+                </div>
+            </div>
+            <!--Card display-->
+            <div class="card" style="height:600px !important;width:770px !important;margin-left: auto;margin-right: auto;">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src={{selectedImage.image}} style="height:570px !important;width:100% !important;" alt="First sample avatar image">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">{{selectedImage.title}}</h4>
+                    <p class="card-text">{{selectedImage.details}}
+                    </p>                  
+                </div>
+            </div>
+            
+        </div>
+        <!--Right and Left controls-->
+        <a class="carousel-control-prev" href="#carousel-example-1z" role="button" style="background-color: grey" data-slide="prev"
+            (click)="prevFunc()">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-example-1z" role="button" style="background-color: grey" data-slide="next"
+            (click)="nextFunc()">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+<!--The picture and details have been taken for this carousel demo from below URL: 
+    https://travel.usnews.com/gallery/the-worlds-30-best-places-to-visit-in-2017-18?slide=18-->
